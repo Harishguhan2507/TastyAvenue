@@ -10,33 +10,33 @@ const Navbar = () => {
   return (
     <div className="relative">
       <div className="flex justify-between items-center shadow-md p-4">
-        <div className="flex items-center">
-          <div className="bg-[#ea580c]  rounded-2xl px-2 py-2">
-            <LuChefHat className="text-5xl text-white cursor-pointer" />
+        <div className="flex">
+          <div className="bg-[#ea580c]  rounded-2xl px-2">
+            <LuChefHat className="md:text-5xl text-white cursor-pointer px-2" />
           </div>
           <div className="hidden md:block">
-            <Link to="/" className="text-2xl font-bold ml-4 text-gray-700">
+            <Link to="/" className="md:text-2xl font-bold ml-4 text-gray-700">
               TastyAvenue
             </Link>
           </div>
         </div>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-6">
+        <div className="hidden md:flex gap-6">
           <Link to="/" className="text-xl text-gray-700 relative group">
-            Home
+            <span className="hover:text-[#ea580c]">Home</span>
             <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-[#ea580c] transition-all duration-300 group-hover:w-full"></span>
           </Link>
           <Link to="/menu" className="text-xl text-gray-700 relative group">
-            Menu
+            <span className="hover:text-[#ea580c]">Menu</span>
             <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-[#ea580c] transition-all duration-300 group-hover:w-full"></span>
           </Link>
           <Link to="/about" className="text-xl text-gray-700 relative group">
-            About
+            <span className="hover:text-[#ea580c]">About</span>
             <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-[#ea580c] transition-all duration-300 group-hover:w-full"></span>
           </Link>
           <Link to="/contact" className="text-xl text-gray-700 relative group">
-            Contact
+            <span className="hover:text-[#ea580c]">Contact</span>
             <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-[#ea580c] transition-all duration-300 group-hover:w-full"></span>
           </Link>
         </div>
