@@ -8,7 +8,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="relative">
+    <div className="fixed top-0 left-0 right-0 z-50 bg-white  text-red-400 font-bold">
       <div className="flex justify-between items-center shadow-md p-4">
         <div className="flex">
           <div className="bg-[#ea580c]  rounded-2xl px-2">

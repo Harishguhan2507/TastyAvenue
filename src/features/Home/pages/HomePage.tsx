@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Navbar from "../../../components/Navbar";
+import FoodCard from "../../../components/FoodCard";
+import restaurentLogo from "../../../assets/restaurantLogo.png";
+import { homePageProducts } from "../../../Util/data";
 
 const HomePage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -18,7 +21,7 @@ const HomePage = () => {
   }, [images.length]);
 
   return (
-    <div className="text-4xl text-red-400 font-bold">
+    <div className="text-4xl">
       <Navbar />
       <div className="relative h-screen overflow-hidden">
         {/* Image Slider */}
@@ -106,6 +109,39 @@ const HomePage = () => {
               }`}
             />
           ))}
+        </div>
+      </div>
+
+      <div className="py-16 px-4">
+        <div className="flex justify-center items-center">
+          <img src={restaurentLogo} alt="Restaurant Logo" />
+        </div>
+        <div className="max-w-6xl mx-auto">
+          <h1 className="text-2xl -mt-16 md:text-5xl font-bold text-center md:-mt-20 text-[#ea580c]">
+            Our Special Dishes
+          </h1>
+          <p className="text-lg md:text-xl py-5 text-center text-gray-600 max-w-4xl mx-auto">
+            From classic favorites to modern culinary creations, our menu is
+            designed to tantalize your taste buds. Every dish is made with the
+            freshest ingredients and an extra dash of love.
+          </p>
+
+          {/* Food Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+            {homePageProducts.map((product) => (
+              <FoodCard
+                key={product.id}
+                id={product.id}
+                name={product.name}
+                description={product.description}
+                price={parseFloat(product.price)}
+                image={product.image}
+                rating={parseFloat(product.rating)}
+                category={product.category}
+                onAddToCart={(id) => console.log(`Added item ${id} to cart`)}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>
