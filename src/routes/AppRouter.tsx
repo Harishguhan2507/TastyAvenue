@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from "../features/Home/pages/HomePage";
 import MenuPage from "../features/Menu/pages/MenuPage";
+import ProductDetailPage from "../features/Menu/pages/ProductDetailPage";
 import AboutPage from "../features/About/pages/AboutPage";
 import ContactPage from "../features/Contact/pages/ContactPage";
 import type { JSX } from "react";
@@ -19,6 +20,10 @@ export default function AppRouter() {
     {
       path: "/menu",
       element: <MenuPage />,
+    },
+    {
+      path: "/product/:id",
+      element: <ProductDetailPage />,
     },
     {
       path: "/about",

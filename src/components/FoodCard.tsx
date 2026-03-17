@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { FaCartPlus, FaStar } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 interface FoodCardProps {
   id: number;
@@ -23,13 +24,14 @@ const FoodCard: React.FC<FoodCardProps> = ({
   onAddToCart,
 }) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      whileHover={{ y: -5 }}
-      className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
-    >
+    <Link to={`/product/${id}`}>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        whileHover={{ y: -5 }}
+        className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 cursor-pointer"
+      >
       {/* Image Container */}
       <div className="relative h-48 overflow-hidden">
         <img
@@ -68,6 +70,7 @@ const FoodCard: React.FC<FoodCardProps> = ({
         </div>
       </div>
     </motion.div>
+    </Link>
   );
 };
 

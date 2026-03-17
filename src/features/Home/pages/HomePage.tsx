@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Navbar from "../../../components/Navbar";
 import FoodCard from "../../../components/FoodCard";
+import Footer from "../../../components/Footer";
 import restaurentLogo from "../../../assets/restaurantLogo.png";
 import { homePageProducts } from "../../../Util/data";
 
@@ -21,7 +22,7 @@ const HomePage = () => {
   }, [images.length]);
 
   return (
-    <div className="text-4xl">
+    <div>
       <Navbar />
       <div className="relative h-screen overflow-hidden">
         {/* Image Slider */}
@@ -50,7 +51,7 @@ const HomePage = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2 }}
-              className="text-5xl md:text-7xl font-bold mb-6"
+              className="text-4xl md:text-6xl font-bold mb-6"
             >
               Welcome to{" "}
               <motion.span
@@ -117,7 +118,7 @@ const HomePage = () => {
           <img src={restaurentLogo} alt="Restaurant Logo" />
         </div>
         <div className="max-w-6xl mx-auto">
-          <h1 className="text-2xl -mt-16 md:text-5xl font-bold text-center md:-mt-20 text-[#ea580c]">
+          <h1 className="text-xl -mt-16 md:text-4xl font-bold text-center md:-mt-20 text-[#ea580c]">
             Our Special Dishes
           </h1>
           <p className="text-lg md:text-xl py-5 text-center text-gray-600 max-w-4xl mx-auto">
@@ -144,6 +145,7 @@ const HomePage = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
